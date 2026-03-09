@@ -9,10 +9,13 @@ and return on investment (ROI).
 
 ---
 
-## Tools Used
+## Project Workflow
 
-- Python (Pandas, NumPy) – Data cleaning and preprocessing
-- Power BI – Dashboard development and visualization
+1. Data Cleaning – Python (Pandas)
+2. Data Storage – MySQL
+3. Data Analysis – SQL queries
+4. Data Visualization – Power BI dashboard
+5. Insight Generation – Marketing performance evaluation
 
 ---
 
@@ -56,6 +59,108 @@ Key cleaning steps included:
 
 
 ---
+
+## SQL Data Analysis
+
+After loading the cleaned dataset into MySQL, several SQL queries were performed to explore marketing campaign performance and generate insights before building the dashboard in Power BI.
+
+### 1. Total Marketing Performance
+
+This query calculates overall marketing activity and financial performance.
+
+```sql
+SELECT
+SUM(impressions) AS Total_Impressions,
+SUM(clicks) AS Total_Clicks,
+SUM(conversions) AS Total_Conversions,
+SUM(revenue) AS Total_Revenue,
+SUM(cost) AS Total_Cost
+FROM marketing_campaigns;
+```
+
+---
+
+### 2. Best Performing Marketing Channel
+
+This query compares marketing channels based on total revenue, cost, and return on investment.
+
+```sql
+SELECT
+channel,
+ROUND(SUM(revenue),2) AS Total_Revenue,
+ROUND(SUM(cost),2) AS Total_Cost,
+ROUND(SUM(ROI),2) AS Total_ROI
+FROM marketing_campaigns
+GROUP BY channel
+ORDER BY Total_Revenue DESC;
+```
+
+---
+
+### 3. Top 10 Campaigns by ROI
+
+This query identifies the campaigns generating the highest return on investment.
+
+```sql
+SELECT
+campaign_id,
+channel,
+revenue,
+cost,
+ROI
+FROM marketing_campaigns
+ORDER BY ROI DESC
+LIMIT 10;
+```
+
+---
+
+### 4. Channel Performance by Conversion Rate
+
+This query evaluates the average conversion rate for each marketing channel.
+
+```sql
+SELECT
+channel,
+AVG(conversion_rate) AS avg_conversion_rate
+FROM marketing_campaigns
+GROUP BY channel
+ORDER BY avg_conversion_rate DESC;
+```
+
+---
+
+### 5. CTR Performance by Channel
+
+This query analyzes the click-through rate (CTR) for each marketing channel.
+
+```sql
+SELECT
+channel,
+AVG(CTR) AS avg_ctr
+FROM marketing_campaigns
+GROUP BY channel
+ORDER BY avg_ctr DESC;
+```
+
+---
+
+### 6. Revenue Trend Over Time
+
+This query calculates daily revenue to analyze marketing performance trends over time.
+
+```sql
+SELECT
+date,
+ROUND(SUM(revenue),2) AS daily_revenue
+FROM marketing_campaigns
+GROUP BY date
+ORDER BY date;
+```
+
+---
+
+These queries were used to explore the dataset and identify key marketing insights before building the interactive Power BI dashboard.
 
 ## Power BI Dashboard
 
