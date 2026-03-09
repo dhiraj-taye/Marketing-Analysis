@@ -46,34 +46,14 @@ Key cleaning steps included:
 - Handling missing values
 - Verifying calculated marketing metrics
 
-### Example Python Cleaning Code
-
-```python
-import pandas as pd
-
-# Load dataset
-df = pd.read_csv("marketing_campaign_data.csv")
-
-# Remove rows with unknown channels
-df = df[df["channel"] != "Unknown"]
-
-# Convert numeric columns
-numeric_cols = ["impressions", "clicks", "conversions", "revenue", "cost"]
-df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors="coerce")
-
-# Convert date column
-df["date"] = pd.to_datetime(df["date"])
-
-# Drop missing values
-df = df.dropna()
-
-# Save cleaned dataset
-df.to_csv("clean_marketing_campaign_data.csv", index=False)
-```
-
 ### Python Cleaning Screenshot
 
-![Python Cleaning](images/python_cleaning.png)
+![Python Cleaning](Visuals/Python_code1.png)
+![Python Cleaning](Visuals/Python_code2.png)
+![Python Cleaning](Visuals/Python_code3.png)
+![Python Cleaning](Visuals/Python_code4.png)
+![Python Cleaning](Visuals/Python_code5.png)
+
 
 ---
 
