@@ -68,15 +68,7 @@ After loading the cleaned dataset into MySQL, several SQL queries were performed
 
 This query calculates overall marketing activity and financial performance.
 
-```sql
-SELECT
-SUM(impressions) AS Total_Impressions,
-SUM(clicks) AS Total_Clicks,
-SUM(conversions) AS Total_Conversions,
-SUM(revenue) AS Total_Revenue,
-SUM(cost) AS Total_Cost
-FROM marketing_campaigns;
-```
+![SQL](Visuals/sql_code1.png)
 
 ---
 
@@ -84,16 +76,7 @@ FROM marketing_campaigns;
 
 This query compares marketing channels based on total revenue, cost, and return on investment.
 
-```sql
-SELECT
-channel,
-ROUND(SUM(revenue),2) AS Total_Revenue,
-ROUND(SUM(cost),2) AS Total_Cost,
-ROUND(SUM(ROI),2) AS Total_ROI
-FROM marketing_campaigns
-GROUP BY channel
-ORDER BY Total_Revenue DESC;
-```
+![SQL](Visuals/sql_code2.png)
 
 ---
 
@@ -101,17 +84,7 @@ ORDER BY Total_Revenue DESC;
 
 This query identifies the campaigns generating the highest return on investment.
 
-```sql
-SELECT
-campaign_id,
-channel,
-revenue,
-cost,
-ROI
-FROM marketing_campaigns
-ORDER BY ROI DESC
-LIMIT 10;
-```
+![SQL](Visuals/sql_code3.png)
 
 ---
 
@@ -119,14 +92,7 @@ LIMIT 10;
 
 This query evaluates the average conversion rate for each marketing channel.
 
-```sql
-SELECT
-channel,
-AVG(conversion_rate) AS avg_conversion_rate
-FROM marketing_campaigns
-GROUP BY channel
-ORDER BY avg_conversion_rate DESC;
-```
+![SQL](Visuals/sql_code4.png)
 
 ---
 
@@ -134,14 +100,7 @@ ORDER BY avg_conversion_rate DESC;
 
 This query analyzes the click-through rate (CTR) for each marketing channel.
 
-```sql
-SELECT
-channel,
-AVG(CTR) AS avg_ctr
-FROM marketing_campaigns
-GROUP BY channel
-ORDER BY avg_ctr DESC;
-```
+![SQL](Visuals/sql_code5.png)
 
 ---
 
@@ -149,14 +108,7 @@ ORDER BY avg_ctr DESC;
 
 This query calculates daily revenue to analyze marketing performance trends over time.
 
-```sql
-SELECT
-date,
-ROUND(SUM(revenue),2) AS daily_revenue
-FROM marketing_campaigns
-GROUP BY date
-ORDER BY date;
-```
+![SQL](Visuals/sql_code6.png)
 
 ---
 
