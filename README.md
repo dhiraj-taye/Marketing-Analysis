@@ -140,7 +140,7 @@ The dashboard includes:
 
 This scatter plot compares campaign cost and conversion rate to identify the most efficient campaigns.
 
-![Scatter Plot](images/scatter_plot.png)
+![Scatter Plot](DASHBOARD/scatter_plot.png)
 
 ---
 
