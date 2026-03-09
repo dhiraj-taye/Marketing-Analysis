@@ -132,7 +132,7 @@ The dashboard includes:
 
 ## Dashboard Preview
 
-<img src="images/dashboard.png" width="850">
+<img src="DASHBOARD/market_analysis_dashboard.png" width="850">
 
 ---
 
