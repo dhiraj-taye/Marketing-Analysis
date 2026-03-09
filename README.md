@@ -153,13 +153,3 @@ This scatter plot compares campaign cost and conversion rate to identify the mos
 
 ---
 
-
-
-## Author
-
-This project was created as part of a data analytics portfolio to demonstrate skills in:
-
-- Data cleaning with Python
-- Data analysis
-- Marketing analytics
-- Dashboard development using Power BI
