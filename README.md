@@ -40,7 +40,7 @@ Data preprocessing was performed using Python and the Pandas library.
 
 Key cleaning steps included:
 
-- Removing rows with unknown marketing channels
+- Removing duplicate values
 - Converting numerical columns to proper data types
 - Formatting the date column
 - Handling missing values
